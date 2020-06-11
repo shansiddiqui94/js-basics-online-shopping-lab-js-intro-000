@@ -43,7 +43,7 @@ function viewCart() {
       var string = `${itemObject['itemName']} at $${itemObject['itemPrice']}`
       itemStrings.push(string)
     }
-  
+
   }
 return  "In your cart, you have " +  itemStrings.join(', ')
 }
