@@ -32,7 +32,7 @@ function viewCart() {
     var itemObject2 = cart[1]
     return `In your cart, you have ${itemObject1['itemName']} at $${itemObject1['itemPrice']}, and ${itemObject2['itemName']} at $${itemObject2['itemPrice']}.`
   }
-  else if (cart.length === 3) {
+  else if (cart.length >= 3) {
   var itemStrings = []
   for(var i = 0; i < cart.length; i++ ){
     var itemObject = cart[i]
