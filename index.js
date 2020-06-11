@@ -69,7 +69,7 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  if(cardNumber){ // is cardNumber a truthy value
+  if(cardNumber){ // is cardNumber a truthy value .. Test will push in placeholder
     var Msg = `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`//empty out cart?
     setCart([])
     return Msg
