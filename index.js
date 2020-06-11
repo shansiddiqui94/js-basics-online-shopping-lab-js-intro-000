@@ -71,7 +71,7 @@ function removeFromCart(item) {
 function placeOrder(cardNumber) {
   if(cardNumber){ // is cardNumber a truthy value .. Test will push in placeholder
     var Msg = `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`//empty out cart?
-    setCart([])// call set cart, array becomes c var as an empty array.
+    setCart([])// call set cart, array becomes c var as an empty array. Destructive method, changing the whole cart. 
     return Msg
   }
   return "Sorry, we don't have a credit card on file for you."
