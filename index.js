@@ -35,7 +35,11 @@ function viewCart() {
   else if (cart.length >= 3) {
   var itemStrings = []
   for(var i = 0; i < cart.length; i++ ){
-    var itemObject = cart[i]
+      var itemObject = cart[i]
+    if(i === cart.length-1){ // are we on the last index on this array
+      itemStrings.push()
+    }
+  
     var string = `${itemObject['itemName']} at $${itemObject['itemPrice']}`
     itemStrings.push(string)
   }
