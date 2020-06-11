@@ -39,7 +39,7 @@ function viewCart() {
     var string = `${itemObject['itemName']} at $${itemObject['itemPrice']}`
     itemStrings.push(string)
   }
-return  "In your cart, you have " + itemStrings
+return  "In your cart, you have " +  itemStrings
 }
 else if(cart.length === 0){
   return `Your shopping cart is empty.`
