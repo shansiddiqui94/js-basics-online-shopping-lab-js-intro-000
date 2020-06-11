@@ -39,7 +39,6 @@ function viewCart() {
     if(i === cart.length-1){ // are we on the last index on this array
       itemStrings.push(`and ${itemObject['itemName']} at $${itemObject['itemPrice']}.`)
     }
-
     var string = `${itemObject['itemName']} at $${itemObject['itemPrice']}`
     itemStrings.push(string)
   }
