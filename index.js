@@ -13,7 +13,7 @@ function addToCart(item) {
  let newItem = {
    itemName: item,
    itemPrice: getRandomInt(99) + 1
- }
+ }// add to cart called 1 1 object at index 0
  cart.push(newItem)
  return `${item} has been added to your cart.`
 }
@@ -22,23 +22,50 @@ function getRandomInt(max) {
 }
 
 function viewCart() {
-  if(cart.length === 0){
-    return 'Your Shopping cart is empty.'
+  if(cart.length === 1 ){
+    var itemObject1 = cart[0]
+    return `In your cart, you have ${itemObject1['itemName']} at $${itemObject1['itemPrice']}.`
+  }// returing a string that uses data from the object.
+
+  else if(cart.length === 2){
+    var itemObject1 = cart[0]
+    var itemObject2 = cart[1]
+    return `In your cart, you have ${itemObject1['itemName']} at $${itemObject1['itemPrice']}, and ${itemObject2['itemName']} at $${itemObject2['itemPrice']}.`
   }
+  else if (cart.length === 3) {
+  var itemStrings = []
   for(var i = 0; i < cart.length; i++ ){
-    var vC = [i]
+    var itemObject = cart[i]
+    var string = `${itemObject['itemName']} at $${itemObject['itemPrice']}`
+    itemStrings.push(string)
   }
-  return vC
+return  "In your cart, you have " + itemStrings
+}
+else if(cart.length === 0){
+  return `Your shopping cart is empty.`
+}
 }
 
 function total() {
-  // write your code here
+      var totalAmt = 0
+  for(var i = 0; i < cart.length; i++){
+  totalAmt += cart[i].itemPrice // What we are doing is we are taking the prices in the cart iterating thru them, and then adding them up and storing them in totalAmt
+  }
+  return totalAmt
 }
 
 function removeFromCart(item) {
-  // write your code here
+  for(var i = 0; i < cart.length; i++){
+    if( cart[i].itemName === item){ // iterates thru the objects,
+    return cart.splice(i, 1)
+  }
+    }
+    return 'That item is not in your cart.'
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+  if(cardNumber === 83296759){ // Setting cardNumber to equal existing card number.
+    return 'Your total cost $71, which will be charged to the card 83296759.' //empty out cart?
+  }
+  return "Sorry, we don't have a credit card on file for you."
 }
