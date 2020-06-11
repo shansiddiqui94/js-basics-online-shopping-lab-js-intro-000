@@ -39,8 +39,11 @@ function viewCart() {
     if(i === cart.length-1){ // are we on the last index on this array
       itemStrings.push(`and ${itemObject['itemName']} at $${itemObject['itemPrice']}.`) // last one to add "and"
     }
-    var string = `${itemObject['itemName']} at $${itemObject['itemPrice']}`
-    itemStrings.push(string)
+    else {
+      var string = `${itemObject['itemName']} at $${itemObject['itemPrice']}`
+      itemStrings.push(string)
+    }
+  
   }
 return  "In your cart, you have " +  itemStrings.join(', ')
 }
