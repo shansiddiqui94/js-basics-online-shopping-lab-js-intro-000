@@ -65,7 +65,7 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   if(cardNumber){ // is cardNumber a truthy value
-    return 'Your total cost $71, which will be charged to the card 83296759.' //empty out cart?
+    return `Your total cost $71, which will be charged to the card ${cardNumber}.`//empty out cart?
   }
   return "Sorry, we don't have a credit card on file for you."
 }
